@@ -6,211 +6,161 @@
 <title>Rohith Portfolio</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
+  margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #0f172a;
-  color: #e2e8f0;
-}
-
-/* NAVBAR */
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 50px;
-  background: #020617;
-  position: sticky;
-  top: 0;
-}
-
-nav h2 {
-  color: #38bdf8;
-}
-
-nav a {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
   color: white;
-  margin-left: 20px;
-  text-decoration: none;
-}
-
-/* HERO */
-.hero {
   text-align: center;
-  padding: 80px 20px;
 }
 
-.hero h1 {
-  font-size: 40px;
+/* HEADER */
+header {
+  padding: 40px;
 }
 
-.hero span {
-  color: #38bdf8;
+header h1 {
+  font-size: 36px;
 }
 
-.hero p {
-  margin-top: 10px;
+header p {
   color: #94a3b8;
 }
 
-/* SECTION */
-section {
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: auto;
+/* BUTTON NAV */
+.nav-buttons {
+  margin: 20px;
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #38bdf8;
-}
-
-/* CARDS */
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: #1e293b;
-  padding: 20px;
-  border-radius: 10px;
+.nav-buttons button {
+  padding: 12px 20px;
+  margin: 8px;
+  border: none;
+  border-radius: 25px;
+  background: #38bdf8;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
   transition: 0.3s;
 }
 
-.card:hover {
-  transform: scale(1.05);
+.nav-buttons button:hover {
+  background: #0ea5e9;
+  color: white;
 }
 
-.card a {
-  color: #38bdf8;
-  text-decoration: none;
-}
-
-/* SKILLS */
-.skills span {
-  display: inline-block;
+/* CONTENT SECTIONS */
+.content {
+  display: none;
+  max-width: 800px;
+  margin: auto;
   background: #1e293b;
-  padding: 10px 15px;
-  margin: 5px;
-  border-radius: 20px;
+  padding: 30px;
+  border-radius: 15px;
+  margin-top: 20px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+}
+
+.active {
+  display: block;
+}
+
+/* CARDS */
+.card {
+  background: #334155;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
 }
 
 /* CONTACT */
-.contact {
-  text-align: center;
-}
-
-.contact a {
-  display: block;
-  margin: 10px;
+a {
   color: #38bdf8;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #020617;
-  margin-top: 40px;
+  text-decoration: none;
 }
 </style>
+
+<script>
+function showSection(id) {
+  let sections = document.querySelectorAll('.content');
+  sections.forEach(sec => sec.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav>
-  <h2>Rohith</h2>
-  <div>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<div class="hero">
-  <h1>Hi, I'm <span>Chaganti Rohith</span></h1>
+<header>
+  <h1>Chaganti Rohith Kumar Reddy</h1>
   <p>Data Analytics Intern | Python | SQL | Power BI</p>
+</header>
+
+<div class="nav-buttons">
+  <button onclick="showSection('about')">About</button>
+  <button onclick="showSection('skills')">Skills</button>
+  <button onclick="showSection('projects')">Projects</button>
+  <button onclick="showSection('education')">Education</button>
+  <button onclick="showSection('certifications')">Certifications</button>
+  <button onclick="showSection('contact')">Contact</button>
 </div>
 
 <!-- ABOUT -->
-<section id="about">
+<div id="about" class="content active">
   <h2>About Me</h2>
-  <p style="text-align:center;">
-    I am a Data Analytics Intern at Global Quest Technologies, Bangalore. 
-    I specialize in Python, SQL, and Data Visualization tools. 
-    Passionate about turning data into insights and building impactful solutions.
-  </p>
-</section>
+  <p>I am a Data Analytics Intern at Global Quest Technologies, Bangalore. Skilled in Python, SQL, and Data Visualization.</p>
+</div>
 
 <!-- SKILLS -->
-<section id="skills">
+<div id="skills" class="content">
   <h2>Skills</h2>
-  <div class="skills" style="text-align:center;">
-    <span>Python</span>
-    <span>SQL</span>
-    <span>Tableau</span>
-    <span>Power BI</span>
-    <span>Excel</span>
-    <span>Power Query</span>
-    <span>VS Code</span>
-  </div>
-</section>
+  <div class="card">Python</div>
+  <div class="card">SQL</div>
+  <div class="card">Tableau</div>
+  <div class="card">Power BI</div>
+  <div class="card">Excel</div>
+  <div class="card">Power Query</div>
+</div>
 
 <!-- PROJECTS -->
-<section id="projects">
+<div id="projects" class="content">
   <h2>Projects</h2>
-  <div class="card-container">
-
-    <div class="card">
-      <h3>Soldier Health Tracking System</h3>
-      <p>Monitors soldier health using data analytics techniques.</p>
-      <a href="https://github.com/Crohith123/Soldier-Health-Tracking-System" target="_blank">View Project</a>
-    </div>
-
+  <div class="card">
+    <h3>Soldier Health Tracking System</h3>
+    <p>Health monitoring using data analytics</p>
+    <a href="https://github.com/Crohith123/Soldier-Health-Tracking-System" target="_blank">View Project</a>
   </div>
-</section>
+</div>
+
+<!-- EDUCATION -->
+<div id="education" class="content">
+  <h2>Education</h2>
+  <div class="card">B.Tech - ECE (2024) - Karunya Institute</div>
+  <div class="card">Intermediate - MPC (2018) - Narayana College</div>
+  <div class="card">SSC (2017) - Sri Chaitanya School</div>
+</div>
 
 <!-- CERTIFICATIONS -->
-<section id="certifications">
+<div id="certifications" class="content">
   <h2>Certifications</h2>
-  <div class="card-container">
-
-    <div class="card">Linux Foundation Certification</div>
-    <div class="card">AWS IoT Certification</div>
-    <div class="card">Cloud Computing - NPTEL</div>
-    <div class="card">Technical English - NPTEL</div>
-    <div class="card">Google Cloud AI</div>
-    <div class="card">Generative AI</div>
-    <div class="card">Responsible AI</div>
-    <div class="card">Cisco Networking</div>
-
-  </div>
-</section>
+  <div class="card">Linux Foundation Certification</div>
+  <div class="card">AWS IoT Certification</div>
+  <div class="card">NPTEL Cloud Computing</div>
+  <div class="card">Technical English</div>
+  <div class="card">Google Cloud AI</div>
+  <div class="card">Generative AI</div>
+  <div class="card">Responsible AI</div>
+  <div class="card">Cisco Networking</div>
+</div>
 
 <!-- CONTACT -->
-<section id="contact" class="contact">
-  <h2>Contact Me</h2>
-  <p>Feel free to reach out to me</p>
-  <a href="mailto:chagantirohith@gmail.com">Email: chagantirohith@gmail.com</a>
-  <a href="https://www.linkedin.com/in/c-rohith/" target="_blank">LinkedIn</a>
-  <a href="https://github.com/Crohith123" target="_blank">GitHub</a>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Rohith | Portfolio</p>
-</footer>
+<div id="contact" class="content">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:chagantirohith@gmail.com">chagantirohith@gmail.com</a></p>
+  <p><a href="https://www.linkedin.com/in/c-rohith/" target="_blank">LinkedIn</a></p>
+  <p><a href="https://github.com/Crohith123" target="_blank">GitHub</a></p>
+</div>
 
 </body>
 </html>
