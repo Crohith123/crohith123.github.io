@@ -1,90 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rohith Portfolio</title>
+<title>Portfolio</title>
 
 <style>
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+  background: #0f172a;
   color: white;
   text-align: center;
+  font-family: Arial;
 }
 
-/* HEADER */
-header {
-  padding: 40px;
-}
-
-header h1 {
-  font-size: 36px;
-}
-
-header p {
-  color: #94a3b8;
-}
-
-/* BUTTON NAV */
 .nav-buttons {
   margin: 20px;
 }
 
-.nav-buttons button {
-  padding: 12px 20px;
+button {
+  padding: 12px;
   margin: 8px;
+  border-radius: 20px;
   border: none;
-  border-radius: 25px;
-  background: #38bdf8;
-  color: black;
+  background: cyan;
   cursor: pointer;
   font-weight: bold;
-  transition: 0.3s;
 }
 
-.nav-buttons button:hover {
-  background: #0ea5e9;
-  color: white;
-}
-
-/* CONTENT SECTIONS */
 .content {
   display: none;
-  max-width: 800px;
-  margin: auto;
+  margin: 20px auto;
+  padding: 20px;
+  width: 80%;
   background: #1e293b;
-  padding: 30px;
-  border-radius: 15px;
-  margin-top: 20px;
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+  border-radius: 10px;
 }
 
 .active {
   display: block;
-}
-
-/* CARDS */
-.card {
-  background: #334155;
-  padding: 15px;
-  margin: 10px;
-  border-radius: 10px;
-}
-
-/* CONTACT */
-a {
-  color: #38bdf8;
-  text-decoration: none;
 }
 </style>
 
 <script>
 function showSection(id) {
   let sections = document.querySelectorAll('.content');
-  sections.forEach(sec => sec.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+  sections.forEach(sec => sec.style.display = "none");
+  document.getElementById(id).style.display = "block";
 }
 </script>
 
@@ -92,10 +51,8 @@ function showSection(id) {
 
 <body>
 
-<header>
-  <h1>Chaganti Rohith Kumar Reddy</h1>
-  <p>Data Analytics Intern | Python | SQL | Power BI</p>
-</header>
+<h1>Chaganti Rohith Kumar Reddy</h1>
+<p>Data Analytics Intern</p>
 
 <div class="nav-buttons">
   <button onclick="showSection('about')">About</button>
@@ -106,60 +63,34 @@ function showSection(id) {
   <button onclick="showSection('contact')">Contact</button>
 </div>
 
-<!-- ABOUT -->
-<div id="about" class="content active">
-  <h2>About Me</h2>
-  <p>I am a Data Analytics Intern at Global Quest Technologies, Bangalore. Skilled in Python, SQL, and Data Visualization.</p>
+<div id="about" class="content" style="display:block;">
+<h2>About</h2>
+<p>Data Analytics Intern at Global Quest Technologies.</p>
 </div>
 
-<!-- SKILLS -->
 <div id="skills" class="content">
-  <h2>Skills</h2>
-  <div class="card">Python</div>
-  <div class="card">SQL</div>
-  <div class="card">Tableau</div>
-  <div class="card">Power BI</div>
-  <div class="card">Excel</div>
-  <div class="card">Power Query</div>
+<h2>Skills</h2>
+<p>Python, SQL, Power BI, Tableau, Excel</p>
 </div>
 
-<!-- PROJECTS -->
 <div id="projects" class="content">
-  <h2>Projects</h2>
-  <div class="card">
-    <h3>Soldier Health Tracking System</h3>
-    <p>Health monitoring using data analytics</p>
-    <a href="https://github.com/Crohith123/Soldier-Health-Tracking-System" target="_blank">View Project</a>
-  </div>
+<h2>Projects</h2>
+<p>Soldier Health Tracking System</p>
 </div>
 
-<!-- EDUCATION -->
 <div id="education" class="content">
-  <h2>Education</h2>
-  <div class="card">B.Tech - ECE (2024) - Karunya Institute</div>
-  <div class="card">Intermediate - MPC (2018) - Narayana College</div>
-  <div class="card">SSC (2017) - Sri Chaitanya School</div>
+<h2>Education</h2>
+<p>B.Tech ECE - Karunya Institute</p>
 </div>
 
-<!-- CERTIFICATIONS -->
 <div id="certifications" class="content">
-  <h2>Certifications</h2>
-  <div class="card">Linux Foundation Certification</div>
-  <div class="card">AWS IoT Certification</div>
-  <div class="card">NPTEL Cloud Computing</div>
-  <div class="card">Technical English</div>
-  <div class="card">Google Cloud AI</div>
-  <div class="card">Generative AI</div>
-  <div class="card">Responsible AI</div>
-  <div class="card">Cisco Networking</div>
+<h2>Certifications</h2>
+<p>AWS, Linux Foundation, NPTEL, Google Cloud</p>
 </div>
 
-<!-- CONTACT -->
 <div id="contact" class="content">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:chagantirohith@gmail.com">chagantirohith@gmail.com</a></p>
-  <p><a href="https://www.linkedin.com/in/c-rohith/" target="_blank">LinkedIn</a></p>
-  <p><a href="https://github.com/Crohith123" target="_blank">GitHub</a></p>
+<h2>Contact</h2>
+<p>Email: chagantirohith@gmail.com</p>
 </div>
 
 </body>
