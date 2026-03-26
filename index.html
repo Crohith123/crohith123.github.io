@@ -1,112 +1,216 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Rohith Portfolio</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rohith Portfolio</title>
 
 <style>
-body {
-  font-family: Arial;
+* {
   margin: 0;
-  background: #f4f4f4;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header {
-  background: #222;
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background: #020617;
+  position: sticky;
+  top: 0;
+}
+
+nav h2 {
+  color: #38bdf8;
+}
+
+nav a {
   color: white;
-  padding: 30px;
-  text-align: center;
-}
-
-section {
-  background: white;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-}
-
-h2 {
-  color: #333;
-}
-
-ul {
-  list-style-type: square;
-}
-
-a {
-  color: blue;
+  margin-left: 20px;
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 40px;
+}
+
+.hero span {
+  color: #38bdf8;
+}
+
+.hero p {
+  margin-top: 10px;
+  color: #94a3b8;
+}
+
+/* SECTION */
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #38bdf8;
+}
+
+/* CARDS */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+/* SKILLS */
+.skills span {
+  display: inline-block;
+  background: #1e293b;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 20px;
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+}
+
+.contact a {
+  display: block;
+  margin: 10px;
+  color: #38bdf8;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+  margin-top: 40px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>Chaganti Rohith Kumar Reddy</h1>
-<p>Data Analytics Intern</p>
-<p>Global Quest Technologies | Bangalore</p>
-</header>
+<!-- NAVBAR -->
+<nav>
+  <h2>Rohith</h2>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-<section>
-<h2>About Me</h2>
-<p>I am a Data Analytics Intern with skills in Python, SQL, and Data Visualization. I am passionate about analyzing data and building real-world solutions.</p>
+<!-- HERO -->
+<div class="hero">
+  <h1>Hi, I'm <span>Chaganti Rohith</span></h1>
+  <p>Data Analytics Intern | Python | SQL | Power BI</p>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <p style="text-align:center;">
+    I am a Data Analytics Intern at Global Quest Technologies, Bangalore. 
+    I specialize in Python, SQL, and Data Visualization tools. 
+    Passionate about turning data into insights and building impactful solutions.
+  </p>
 </section>
 
-<section>
-<h2>Skills</h2>
-<ul>
-<li>Python</li>
-<li>SQL</li>
-<li>Tableau</li>
-<li>Power BI</li>
-<li>Excel</li>
-<li>Power Query</li>
-<li>VS Code</li>
-</ul>
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills" style="text-align:center;">
+    <span>Python</span>
+    <span>SQL</span>
+    <span>Tableau</span>
+    <span>Power BI</span>
+    <span>Excel</span>
+    <span>Power Query</span>
+    <span>VS Code</span>
+  </div>
 </section>
 
-<section>
-<h2>Projects</h2>
-<h3>Soldier Health Tracking System</h3>
-<p>Monitors health parameters of soldiers using data analytics.</p>
-<a href="https://github.com/Crohith123/Soldier-Health-Tracking-System" target="_blank">View Project</a>
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="card-container">
+
+    <div class="card">
+      <h3>Soldier Health Tracking System</h3>
+      <p>Monitors soldier health using data analytics techniques.</p>
+      <a href="https://github.com/Crohith123/Soldier-Health-Tracking-System" target="_blank">View Project</a>
+    </div>
+
+  </div>
 </section>
 
-<section>
-<h2>Education</h2>
-<ul>
-<li>B.Tech - ECE (2024) - Karunya Institute of Technology and Sciences</li>
-<li>Intermediate - MPC (2018) - Narayana Junior College</li>
-<li>SSC (2017) - Sri Chaitanya E.M High School</li>
-</ul>
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <h2>Certifications</h2>
+  <div class="card-container">
+
+    <div class="card">Linux Foundation Certification</div>
+    <div class="card">AWS IoT Certification</div>
+    <div class="card">Cloud Computing - NPTEL</div>
+    <div class="card">Technical English - NPTEL</div>
+    <div class="card">Google Cloud AI</div>
+    <div class="card">Generative AI</div>
+    <div class="card">Responsible AI</div>
+    <div class="card">Cisco Networking</div>
+
+  </div>
 </section>
 
-<section>
-<h2>Certifications</h2>
-<ul>
-<li>Linux Foundation Certification (5G, Edge, IoT, AI)</li>
-<li>AWS IoT Certification</li>
-<li>Cloud Computing - NPTEL</li>
-<li>Technical English - NPTEL</li>
-<li>Google Cloud AI Certification</li>
-<li>Generative AI Certification</li>
-<li>Responsible AI Certification</li>
-<li>Cisco Networking Essentials</li>
-</ul>
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2>Contact Me</h2>
+  <p>Feel free to reach out to me</p>
+  <a href="mailto:chagantirohith@gmail.com">Email: chagantirohith@gmail.com</a>
+  <a href="https://www.linkedin.com/in/c-rohith/" target="_blank">LinkedIn</a>
+  <a href="https://github.com/Crohith123" target="_blank">GitHub</a>
 </section>
 
-<section>
-<h2>Contact</h2>
-<p>Email: chagantirohith@gmail.com</p>
-<p><a href="https://www.linkedin.com/in/c-rohith/" target="_blank">LinkedIn</a></p>
-<p><a href="https://github.com/Crohith123" target="_blank">GitHub</a></p>
-</section>
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Rohith | Portfolio</p>
+</footer>
 
 </body>
 </html>
